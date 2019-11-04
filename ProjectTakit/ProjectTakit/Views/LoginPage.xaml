@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="ProjectTakit.Views.LoginPage"
+             Title="">
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="250" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="80" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="50" />
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="1" Grid.Row="0" 
+                   Source="logo.png"
+                   WidthRequest="150" 
+                   HeightRequest="90" 
+                   VerticalOptions="Center" />
+            <StackLayout Grid.Column="1" Grid.Row="1">
+                <Label Text="帳號："/>
+                <Entry Text="{Binding Account}" />
+                <Label Text="密碼："/>
+                <Entry Text="{Binding Password}"/>
+            </StackLayout>
+            <Button Grid.Column="1" Grid.Row="2" 
+                    Text="登入" 
+                    CornerRadius="100"
+                    HeightRequest="40"
+                    VerticalOptions="End"
+                    HorizontalOptions="Center"
+                    BackgroundColor="#29b6f6"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

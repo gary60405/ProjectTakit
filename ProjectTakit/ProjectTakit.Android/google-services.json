@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "639226476222",
+    "firebase_url": "https://takit-29fe4.firebaseio.com",
+    "project_id": "takit-29fe4",
+    "storage_bucket": "takit-29fe4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:639226476222:android:0105997234de462cca50ef",
+        "android_client_info": {
+          "package_name": "com.yuncheng.takit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "639226476222-79gl0rnu1a733v6u0a2sltcttqmjhs24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDU18EgaIwqdh8s_CYd5qE4bJg1T7Ebgto"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "639226476222-79gl0rnu1a733v6u0a2sltcttqmjhs24.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
