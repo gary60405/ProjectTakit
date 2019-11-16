@@ -1,5 +1,4 @@
-﻿using Google.Cloud.Firestore;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ProjectTakit.Models;
 using System;
@@ -11,14 +10,6 @@ namespace ProjectTakit.Repository
 {
     public class OrderRepository
     {
-
-        public async Task<string> GetFirebaseData()
-        {
-            FirestoreDb db = FirestoreDb.Create("takit-29fe4");
-            DocumentReference document = db.Document("users/1");
-            DocumentSnapshot snapshot = await document.GetSnapshotAsync();
-            return snapshot.GetValue<string>("a");
-        }
         public List<OrderForm> GetOrderForms()
         {
             List<OrderForm> OrderForms = new List<OrderForm>();
@@ -27,10 +18,10 @@ namespace ProjectTakit.Repository
                 var Items = GetOrderItems();
                 var Price = 0;
                 var rand = new Random();
-                Items.ForEach((item) => 
+                Items.ForEach((item) =>
                 {
                     var AddOnPrice = 0;
-                    item.AddOns.ForEach((AddOn) => 
+                    item.AddOns.ForEach((AddOn) =>
                     {
                         AddOnPrice += AddOn.Price * AddOn.Amount;
                     });

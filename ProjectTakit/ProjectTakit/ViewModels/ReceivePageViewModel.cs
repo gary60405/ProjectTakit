@@ -9,7 +9,6 @@ namespace ProjectTakit.ViewModels
     using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Threading.Tasks;
-    using Google.Cloud.Firestore;
     using Prism.Events;
     using Prism.Navigation;
     using Prism.Services;
@@ -30,23 +29,12 @@ namespace ProjectTakit.ViewModels
         public DelegateCommand OrderFormSelectedCommand { get; set; }
         public DelegateCommand OrderFormRefreshCommand { get; set; }
 
+
         public ReceivePageViewModel(INavigationService navigationService)
         {
             this.navigationService = navigationService;
-            //OrderRepository OrderRepository = new OrderRepository();
-            //Task DataTask = OrderRepository.GetFirebaseData();
-            //FirestoreDb db = FirestoreDb.Create("takit-29fe4");
-            //DocumentReference document = db.Document("users/1");
-            //FirestoreChangeListener listener = document.Listen(snapshot =>
-            //{
-            //    if (snapshot.Exists)
-            //    {
-            //        StoreName = "小畇成";
-            //    }
-            //    StoreName = "畇成";
-            //});
             LoginName = "Gary";
-            StoreName = "小畇成";
+            StoreName = "一壺青";
             OrderFormSelectedCommand = new DelegateCommand(async () =>
             {
                 NavigationParameters fooPara = new NavigationParameters
@@ -61,7 +49,7 @@ namespace ProjectTakit.ViewModels
         {
         }
 
-        public void OnNavigatedTo(INavigationParameters parameters)
+        public async void OnNavigatedTo(INavigationParameters parameters)
         {
             if (parameters.GetNavigationMode() == NavigationMode.New)
             {
@@ -80,7 +68,7 @@ namespace ProjectTakit.ViewModels
                     });
                 }
             }
-            else if(parameters.GetValue<string>("Mode") == "Update")
+            else if (parameters.GetValue<string>("Mode") == "Update")
             {
                 var OrderFormSelected = parameters.GetValue<OrderForm>("OrderForm");
                 var index = OrderFormList.IndexOf(OrderFormList.FirstOrDefault(x => x.OrderId == OrderFormSelected.OrderId));

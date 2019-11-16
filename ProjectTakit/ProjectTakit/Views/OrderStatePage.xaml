@@ -73,7 +73,7 @@
                 <Label Grid.Row="0" Grid.Column="0" Text="編號" Style="{StaticResource LabelTitleStyle}"/>
                 <Label Grid.Row="0" Grid.Column="1" Text="{Binding OrderFormSelected.OrderId}" Style="{StaticResource LabelValueStyle}"/>
                 <Label Grid.Row="0" Grid.Column="2" Text="日期" Style="{StaticResource LabelTitleStyle}"/>
-                <Label Grid.Row="0" Grid.Column="3" Text="{Binding OrderFormSelected.CreateTime, StringFormat='{0:MM-dd HH:mm}'}"  Style="{StaticResource LabelValueStyle}"/>
+                <Label Grid.Row="0" Grid.Column="3" Text="{Binding OrderFormSelected.CreateTime, StringFormat='{0:MM/dd HH:mm}'}"  Style="{StaticResource LabelValueStyle}"/>
                 <Label Grid.Row="1" Grid.Column="0" Text="狀態" Style="{StaticResource LabelTitleStyle}"/>
                 <Picker
                     Grid.Row="1" Grid.Column="1"

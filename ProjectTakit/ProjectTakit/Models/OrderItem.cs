@@ -5,7 +5,12 @@ using System.Text;
 
 namespace ProjectTakit.Models
 {
-    public enum OrderState { Uncheck, Making,  Finished, Shipping, Canceled};
+    public enum OrderState { Uncheck, Making, Finished, Shipping, Canceled };
+    public class TestData : INotifyPropertyChanged
+    {
+        public event PropertyChangedEventHandler PropertyChanged;
+        public string a { get; set; }
+    }
     public class OrderStateSet : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
@@ -42,7 +47,7 @@ namespace ProjectTakit.Models
         //hr,min
         public string Start { get; set; }
         public string End { get; set; }
-}
+    }
     public class OrderForm : INotifyPropertyChanged, ICloneable
     {
         public event PropertyChangedEventHandler PropertyChanged;

@@ -8,7 +8,6 @@ namespace ProjectTakit.ViewModels
 {
     using System.Collections.ObjectModel;
     using System.ComponentModel;
-    using Google.Cloud.Firestore;
     using Prism.Events;
     using Prism.Navigation;
     using Prism.Services;
@@ -43,7 +42,7 @@ namespace ProjectTakit.ViewModels
                 };
                 navigationService.GoBackAsync(fooPara);
             });
-            PickerSelectedChangeCommand = new DelegateCommand(() => { 
+            PickerSelectedChangeCommand = new DelegateCommand(() => {
             });
         }
         public void OnNavigatedFrom(INavigationParameters parameters)
@@ -52,7 +51,7 @@ namespace ProjectTakit.ViewModels
 
         public void OnNavigatedTo(INavigationParameters parameters)
         {
-            if(parameters.ContainsKey("OrderForm"))
+            if (parameters.ContainsKey("OrderForm"))
             {
                 OrderFormSelected = parameters.GetValue<OrderForm>("OrderForm");
                 foreach (var OrderItem in OrderFormSelected.OrderItems)

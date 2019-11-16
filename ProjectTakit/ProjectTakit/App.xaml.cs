@@ -4,9 +4,6 @@ using ProjectTakit.ViewModels;
 using ProjectTakit.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Microsoft.AppCenter;
-using Microsoft.AppCenter.Analytics;
-using Microsoft.AppCenter.Crashes;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ProjectTakit
@@ -28,9 +25,6 @@ namespace ProjectTakit
 
             //await NavigationService.NavigateAsync("NavigationPage/LoginPage");
             await NavigationService.NavigateAsync("NavigationPage/ReceivePage");
-            AppCenter.Start("android=38f230c3-b722-4bf9-8dc5-78d7cae709b5;" +
-                  "uwp=5279eb3c-5bed-4f81-a072-7d4cd0c3349f;",
-                  typeof(Analytics), typeof(Crashes));
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
