@@ -15,35 +15,71 @@ namespace ProjectTakit.Converters
             switch (parameter.ToString())
             {
                 case "NAME":
-                    foreach (var AddOn in (List<AddOns>)value)
+                    if (((List<AddOns>)value)[0].Name == "null")
                     {
-                        OutputText += $"(+){AddOn.Name}\n";
+                        return null;
                     }
-                    return OutputText;
+                    else
+                    {
+                        foreach (var AddOn in (List<AddOns>)value)
+                        {
+                            OutputText += $"(+){AddOn.Name}\n";
+                        }
+                        return OutputText;
+                    }
                 case "AMOUNT":
-                    foreach (var AddOn in (List<AddOns>)value)
+                    if (((List<AddOns>)value)[0].Name == "null")
                     {
-                        OutputText += $"{AddOn.Amount}\n";
+                        return null;
                     }
-                    return OutputText;
+                    else
+                    {
+                        foreach (var AddOn in (List<AddOns>)value)
+                        {
+                            OutputText += $"{AddOn.Amount}\n";
+                        }
+                        return OutputText;
+                    }
                 case "PRICE":
-                    foreach (var AddOn in (List<AddOns>)value)
+                    if (((List<AddOns>)value)[0].Name == "null")
                     {
-                        OutputText += $"{AddOn.Price}\n";
+                        return null;
                     }
-                    return OutputText;
+                    else
+                    {
+                        foreach (var AddOn in (List<AddOns>)value)
+                        {
+                            OutputText += $"{AddOn.Price}\n";
+                        }
+                        return OutputText;
+                    }
                 case "ADDON_HEIGHT":
+                    if (((List<AddOns>)value)[0].Name == "null")
+                    {
+                        return 0;
+                    }
                     var AddOnsList = (List<AddOns>)value;
                     return AddOnsList.Count * 30;
                 case "FLAVOR_HEIGHT":
+                    if (((List<Flavor>)value)[0].Name == "null")
+                    {
+                        return 0;
+                    }
                     var FlavorList = (List<Flavor>)value;
                     return FlavorList.Count * 30;
                 case "FLAVORS":
-                    foreach (var flavor in (List<Flavor>)value)
+                    if (((List<Flavor>)value)[0].Name == "null")
                     {
-                        OutputText += $"{flavor.Name}：{flavor.Selected}\n";
+                        return null;
                     }
-                    return OutputText;
+                    else
+                    {
+                        foreach (var flavor in (List<Flavor>)value)
+                        {
+                            OutputText += $"{flavor.Name}：{flavor.Selected}\n";
+                        }
+                        return OutputText;
+                    }
                 default:
                     return OutputText;
             }

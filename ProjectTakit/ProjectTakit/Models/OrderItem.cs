@@ -6,10 +6,21 @@ using System.Text;
 namespace ProjectTakit.Models
 {
     public enum OrderState { Uncheck, Making, Finished, Shipping, Canceled };
+    public class MyMoney
+    {
+        public Guid Id { get; set; }
+        public string Title { get; set; }
+        public string InvoiceNo { get; set; }
+        public int Cost { get; set; }
+    }
     public class TestData : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public string a { get; set; }
+        public string Capital { get; set; }
+        public string Country { get; set; }
+        public string Name { get; set; }
+        public int Popullation { get; set; }
+        public string State { get; set; }
     }
     public class OrderStateSet : INotifyPropertyChanged
     {

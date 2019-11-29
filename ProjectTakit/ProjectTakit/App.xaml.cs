@@ -22,7 +22,6 @@ namespace ProjectTakit
         protected override async void OnInitialized()
         {
             InitializeComponent();
-
             //await NavigationService.NavigateAsync("NavigationPage/LoginPage");
             await NavigationService.NavigateAsync("NavigationPage/ReceivePage");
         }

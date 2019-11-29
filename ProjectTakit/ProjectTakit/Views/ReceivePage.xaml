@@ -11,6 +11,8 @@
         <ResourceDictionary>
             <converter:FormStateToColorConverter  x:Key="FormStateToColorConverter"/>
             <converter:FormStateToStateTextConverter  x:Key="FormStateToStateTextConverter"/>
+            <converter:CheckNullValueConverter  x:Key="CheckNullValueConverter"/>
+            <converter:ReduceIdConverter  x:Key="ReduceIdConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
     <Grid
@@ -66,7 +68,7 @@
             ItemsSource="{Binding OrderFormList}"
             SelectedItem="{Binding OrderFormSelected}"
             IsPullToRefreshEnabled="True"
-            RefreshCommand="{Binding MyTaskRefreshCommand}"
+            RefreshCommand="{Binding OrderFormRefreshCommand}"
             HasUnevenRows="True"
             IsRefreshing="{Binding RefreshingStatus}"
             >
@@ -91,11 +93,13 @@
                                 <Label
                                     FontSize="Medium"
                                     FontAttributes="Bold"
-                                    Text="{Binding OrderId}"/>
+                                    Text="{Binding OrderId,Converter={StaticResource ReduceIdConverter}}"/>
                                 <StackLayout
                                     Spacing="0">
-                                    <Label Text="{Binding CreateTime, StringFormat='{0:yyyy-MM-dd}'}"/>
-                                    <Label Text="{Binding CreateTime, StringFormat='{0:HH:mm:ss}'}"/>
+                                    <Label Text="{Binding CreateTime, 
+                                           StringFormat='{0:yyyy-MM-dd}'}"/>
+                                    <Label Text="{Binding CreateTime, 
+                                            StringFormat='{0:HH:mm:ss}'}"/>
                                 </StackLayout>
                             </StackLayout>
                             <StackLayout Grid.Row="0" Grid.Column="1">
