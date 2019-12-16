@@ -107,7 +107,7 @@
                                     FontSize="Large"
                                     VerticalOptions="Center"
                                     HorizontalOptions="Center"
-                                    Text="{Binding ToatalPrice, StringFormat='NT.{0:F0}'}"/>
+                                    Text="{Binding TotalPrice, StringFormat='NT.{0:F0}'}"/>
                             </StackLayout>
                             <StackLayout Grid.Row="0" Grid.Column="2">
                                 <Label

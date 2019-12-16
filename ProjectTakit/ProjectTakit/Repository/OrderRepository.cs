@@ -32,7 +32,7 @@ namespace ProjectTakit.Repository
                     OrderId = $"A0000{i}",
                     CreateTime = DateTime.Now.AddDays(i),
                     OrderStatus = rand.Next(0, 5),
-                    ToatalPrice = Price,
+                    TotalPrice = Price,
                     OrderItems = Items,
                     UserId = "0911123456"
                 });

@@ -67,7 +67,7 @@ namespace ProjectTakit.Models
         public DateTime CreateTime { get; set; }
         public int OrderStatus { get; set; }
         public List<OrderItem> OrderItems { get; set; }
-        public int ToatalPrice { get; set; }
+        public int TotalPrice { get; set; }
         public string UserId { get; set; }
 
         public object Clone()
